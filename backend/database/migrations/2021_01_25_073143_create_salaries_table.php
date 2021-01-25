@@ -20,6 +20,7 @@ class CreateSalariesTable extends Migration
             $table->integer('dateWork');
             $table->integer('dayOff');
             $table->string('bonus');
+            $table->string('tax');
             $table->string('total');
             $table->timestamps();
         });
