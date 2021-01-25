@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Salary extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'month',
+        'employee',
+        'dateWord',
+        'dayOff',
+        'bonus',
+        'total',
+    ];
+
+    function employee(){
+        return $this->hasOne(employee::class);
+    }
 }

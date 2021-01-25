@@ -8,4 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class employee extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'gender',
+        'birth',
+        'position',
+        'address',
+        'email',
+        'phone',
+        'date',
+        'level',
+        'img',
+    ];
+
+    function position(){
+        return $this->hasMany(Position::class);
+    }
+
+    function salary(){
+        return $this->hasOne(Salary::class);
+    }
 }
