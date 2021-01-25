@@ -14,6 +14,7 @@ class Salary extends Model
         'dateWord',
         'dayOff',
         'bonus',
+        'tax',
         'total',
     ];
 

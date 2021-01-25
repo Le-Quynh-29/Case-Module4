@@ -14,7 +14,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        
+        $employees = employee::all();
+        return response()->json($employees);
     }
 
     /**
@@ -35,7 +36,10 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $employee = new employee;
+        $employee->fill($request->all());
+        $employee->save();
+        return response()->json($employee);
     }
 
     /**
@@ -44,9 +48,10 @@ class EmployeeController extends Controller
      * @param  \App\Models\employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(employee $employee)
+    public function show($id)
     {
-        //
+        $employee = employee::find($id);
+        return response()->json($employee);
     }
 
     /**
@@ -67,9 +72,12 @@ class EmployeeController extends Controller
      * @param  \App\Models\employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, employee $employee)
+    public function update(Request $request, $id)
     {
-        //
+        $employee = employee::find($id);
+        $employee->fill($request->all());
+        $employee->save();
+        return response()->json($employee);
     }
 
     /**
@@ -78,8 +86,9 @@ class EmployeeController extends Controller
      * @param  \App\Models\employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(employee $employee)
+    public function destroy($id)
     {
-        //
+        $employee = employee::find($id);
+        $employee->delete();
     }
 }
