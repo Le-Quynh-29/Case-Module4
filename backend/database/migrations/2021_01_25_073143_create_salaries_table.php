@@ -17,7 +17,7 @@ class CreateSalariesTable extends Migration
             $table->increments('id');
             $table->string('month');
             $table->unsignedInteger('employee')->nullable();
-            $table->integer('dateWord');
+            $table->integer('dateWork');
             $table->integer('dayOff');
             $table->string('bonus');
             $table->string('total');
