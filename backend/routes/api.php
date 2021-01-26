@@ -17,10 +17,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::prefix('salary')->group(function(){
     Route::get('/','\App\Http\Controllers\SalaryController@index');
     Route::post('/','\App\Http\Controllers\SalaryController@store');
     Route::put('/{id}','\App\Http\Controllers\SalaryController@update');
     Route::delete('/{id}','\App\Http\Controllers\SalaryController@destroy');
+});
+
+Route::prefix('employee')->group(function(){
+    Route::get('/','EmployeeController@index');
+    Route::post('/','EmployeeController@store');
+    Route::get('/{id}','EmployeeController@show');
+    Route::put('/{id}','EmployeeController@update');
+    Route::delete('/{id}','EmployeeController@destroy');
 });
