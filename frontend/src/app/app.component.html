@@ -203,17 +203,21 @@
                                   </a>
                                   <ul class="pcoded-submenu">
                                       <li class=" ">
-                                          <a href="">
+                                          <a routerLink="employees"routerLinkActive="active">
+                                          
+                                                <router-outlet></router-outlet>
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert"></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">List Employee</span>
                                               <span class="pcoded-mcaret"></span>
                                           </a>
                                       </li>
                                       
                                       <li class=" ">
-                                          <a href="breadcrumb.html">
+                            
+                                          <a routerLink="add" routerLinkActive="active">
+                                                <router-outlet></router-outlet>
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Breadcrumbs</span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Add Employee</span>
                                               <span class="pcoded-mcaret"></span>
                                           </a>
                                       </li>
@@ -696,6 +700,7 @@
                                   <div id="styleSelector">
 
                                   </div>
+                                  <router-outlet></router-outlet>
                               </div>
                           </div>
                       </div>
@@ -708,4 +713,5 @@
               </div>
           </div>
       </div> 
+      
       
