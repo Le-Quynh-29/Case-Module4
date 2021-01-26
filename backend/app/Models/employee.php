@@ -26,6 +26,6 @@ class employee extends Model
     }
 
     function salary(){
-        return $this->hasOne(Salary::class);
+        return $this->beLongTo(Salary::class);
     }
 }
