@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Salary;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class SalaryController extends Controller
 {
@@ -14,7 +16,11 @@ class SalaryController extends Controller
      */
     public function index()
     {
-        $salarys = Salary::get();
+        $salarys =  DB::table('salaries')
+        ->select('employees.name','salaries.*','positions.money')
+        ->join('employees','employees.id','=','salaries.employee')
+        ->join('positions','positions.id','=','employees.position')
+        ->get();
         return response()->json($salarys, 200);
     }
 
@@ -26,6 +32,12 @@ class SalaryController extends Controller
     public function create()
     {
        //
+    }
+
+    public function search(Request $request)
+    {
+        $salary = Salary::where('month', 'like', '%' . $request->month . '%')->get();
+        return response()->json($salary, 200);
     }
 
     /**
