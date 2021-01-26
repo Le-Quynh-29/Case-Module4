@@ -43,7 +43,7 @@
       <div class="pcoded-overlay-box"></div>
       <div class="pcoded-container navbar-wrapper">
 
-          <nav class="navbar header-navbar pcoded-header">
+          <!-- <nav class="navbar header-navbar pcoded-header">
               <div class="navbar-wrapper">
 
                   <div class="navbar-logo">
@@ -153,7 +153,9 @@
                       </ul>
                   </div>
               </div>
-          </nav>
+          </nav> -->
+
+          
           <div class="pcoded-main-container">
               <div class="pcoded-wrapper">
                   <nav class="pcoded-navbar">
@@ -218,9 +220,9 @@
                                           </a>
                                       </li>
                                       <li class=" ">
-                                          <a href="button.html">
+                                          <a routerLink="salary" routerLinkActive="active">
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Button</span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Salary</span>
                                               <span class="pcoded-mcaret"></span>
                                           </a>
                                       </li>
@@ -349,8 +351,9 @@
 
                                   <div class="page-body">
                                       <div class="row">
+                                        
                                           <!-- card1 start -->
-                                          <div class="col-md-6 col-xl-3">
+                                          <!-- <div class="col-md-6 col-xl-3">
                                               <div class="card widget-card-1">
                                                   <div class="card-block-small">
                                                       <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i>
@@ -363,10 +366,12 @@
                                                       </div>
                                                   </div>
                                               </div>
-                                          </div>
+                                          </div> -->
+
+                                        
                                           <!-- card1 end -->
                                           <!-- card1 start -->
-                                          <div class="col-md-6 col-xl-3">
+                                          <!-- <div class="col-md-6 col-xl-3">
                                               <div class="card widget-card-1">
                                                   <div class="card-block-small">
                                                       <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
@@ -379,10 +384,10 @@
                                                       </div>
                                                   </div>
                                               </div>
-                                          </div>
+                                          </div> -->
                                           <!-- card1 end -->
                                           <!-- card1 start -->
-                                          <div class="col-md-6 col-xl-3">
+                                          <!-- <div class="col-md-6 col-xl-3">
                                               <div class="card widget-card-1">
                                                   <div class="card-block-small">
                                                       <i class="icofont icofont-warning-alt bg-c-green card1-icon"></i>
@@ -395,10 +400,10 @@
                                                       </div>
                                                   </div>
                                               </div>
-                                          </div>
+                                          </div> -->
                                           <!-- card1 end -->
                                           <!-- card1 start -->
-                                          <div class="col-md-6 col-xl-3">
+                                          <!-- <div class="col-md-6 col-xl-3">
                                               <div class="card widget-card-1">
                                                   <div class="card-block-small">
                                                       <i class="icofont icofont-social-twitter bg-c-yellow card1-icon"></i>
@@ -411,34 +416,26 @@
                                                       </div>
                                                   </div>
                                               </div>
-                                          </div>
+                                          </div> -->
+
+                                         
                                           <!-- card1 end -->
                                           <!-- Statestics Start -->
-                                          <div class="col-md-12 col-xl-8">
+                                          <!-- <div class="col-md-12 col-xl-8">
                                               <div class="card">
                                                   <div class="card-header">
-                                                      <h5>Statestics</h5>
-                                                      <div class="card-header-left ">
-                                                      </div>
-                                                      <div class="card-header-right">
-                                                          <ul class="list-unstyled card-option">
-                                                              <li><i class="icofont icofont-simple-left "></i></li>
-                                                              <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                              <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                              <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                              <li><i class="icofont icofont-error close-card"></i></li>
-                                                          </ul>
-                                                      </div>
-                                                  </div>
-                                                  <div class="card-block">
+                                                    
+                                                      <!-- <router-outlet></router-outlet> -->
+                                                  <!-- </div>  -->
+                                                  <!-- <div class="card-block">
                                                       <div id="statestics-chart" style="height:517px;"></div>
-                                                  </div>
-                                              </div>
-                                          </div>
+                                                  </div> -->
+                                              <!-- </div>
+                                          </div>  -->
 
 
 
-                                          <div class="col-md-12 col-xl-4">
+                                          <!-- <div class="col-md-12 col-xl-4">
                                                   <div class="card fb-card">
                                                       <div class="card-header">
                                                           <i class="icofont icofont-social-facebook"></i>
@@ -502,11 +499,11 @@
                                                           </div>
                                                       </div>
                                                   </div>
-                                              </div>
+                                              </div> -->
                                          
                                           <!-- Email Sent End -->
                                           <!-- Data widget start -->
-                                          <div class="col-md-12 col-xl-6">
+                                          <!-- <div class="col-md-12 col-xl-6">
                                               <div class="card project-task">
                                                   <div class="card-header">
                                                       <div class="card-header-left ">
@@ -686,12 +683,13 @@
                                                           </div>
                                                       </div>
                                                   </div>
-                                              </div>
+                                              </div> -->
                                               <!-- Data widget End -->
                                               
-                                          </div>
-                                      </div>
-                                  </div>
+                                          <!-- </div>
+                                      </div> -->
+                                  <!-- </div> -->
+                                  <router-outlet></router-outlet>
 
                                   <div id="styleSelector">
 
@@ -701,6 +699,9 @@
                       </div>
                   </div>
               </div>
+
+            
+
               <div class="fixed-button">
                   <a href="https://codedthemes.com/item/guru-able-admin-template/" target="_blank" class="btn btn-md btn-primary">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
