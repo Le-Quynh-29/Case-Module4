@@ -1,4 +1,4 @@
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http'
@@ -10,6 +10,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 
 
 @NgModule({
@@ -17,16 +18,17 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     EmployeeListComponent,
     CreateEmployeeComponent,
-    SalaryListComponent
+    SalaryListComponent,
+    UpdateEmployeeComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-   
     FormsModule,
-    NgModule
+    NgbModule,
+    
 
   ],
   providers: [],

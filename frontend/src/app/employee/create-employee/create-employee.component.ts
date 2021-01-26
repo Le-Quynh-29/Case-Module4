@@ -16,19 +16,22 @@ employee!: any
   ) { }
 
   ngOnInit(): void {
-    this.employee = new Employee();
+    this.employee = new Employee
   }
 
   addEmployee(){
+    this.employee.gender = '1';
     this.service.createEmployee(this.employee).subscribe(
       data => {
         console.log(data);
         this.router.navigate(['employees']);
         this.employee = new Employee();
       },error =>{
-        console.log(error)
+        console.log("Loi:");
+        console.log(error);
       }
     )
-  }
+    console.log(this.employee);
+}
 
 }
