@@ -1,4 +1,4 @@
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http'
@@ -11,9 +11,8 @@ import { PositionListComponent } from './position/position-list/position-list.co
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
-
+import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 
 
 @NgModule({
@@ -22,7 +21,8 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap'
     EmployeeListComponent,
     PositionListComponent,
     CreateEmployeeComponent,
-    SalaryListComponent
+    SalaryListComponent,
+    UpdateEmployeeComponent
 
 
   ],
@@ -32,8 +32,6 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap'
     HttpClientModule,
     FormsModule,
     NgbModule
-
-   
 
 
   ],
