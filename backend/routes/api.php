@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('salary')->group(function(){
+    Route::get('/','\App\Http\Controllers\SalaryController@index');
+    Route::post('/','\App\Http\Controllers\SalaryController@store');
+    Route::put('/{id}','\App\Http\Controllers\SalaryController@update');
+    Route::delete('/{id}','\App\Http\Controllers\SalaryController@destroy');
 });
 
 Route::prefix('employee')->group(function(){

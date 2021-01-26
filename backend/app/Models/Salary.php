@@ -14,11 +14,10 @@ class Salary extends Model
         'dateWork',
         'dayOff',
         'bonus',
-        'tax',
-        'total',
+        'tax'
     ];
 
     function employee(){
-        return $this->hasOne(employee::class);
+        return $this->hasMany(employee::class);
     }
 }
