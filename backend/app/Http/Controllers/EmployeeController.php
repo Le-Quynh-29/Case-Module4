@@ -59,7 +59,7 @@ class EmployeeController extends Controller
         $employee = employee::find($id);
         $employee = DB::table('employees')
         ->join('salaries','employees.id','=','salaries.employee')
-        ->select('salaries.*','employees.*')
+        ->select('salarie.*','employees.*')
         ->get();
         return response()->json($employee);
     }

@@ -17,6 +17,7 @@
                                                         <th>Join date</th>
                                                         <th>Level</th>
                                                         <th>Image</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody *ngFor = "let employee of employees">
@@ -33,6 +34,9 @@
                                                         <td>{{employee.date}}</td>
                                                         <td>{{employee.level}}</td>
                                                         <td>{{employee.img}}</td>
+                                                        <td>
+                                                            <a class="btn btn-info" routerLink="edit/{{employee.id}}" >edit</a>
+                                                        </td>
                                                     </tr>
                                                     
                                                 </tbody>

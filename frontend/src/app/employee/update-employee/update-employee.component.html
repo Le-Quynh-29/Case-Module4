@@ -1,5 +1,5 @@
 <form>
-    <h2>Add Employee</h2>
+    <h2>Edit Employee</h2>
     <div class="form-group">
         <label for="exampleInputEmail1">Name Employee</label>
         <input type="text" class="form-control" placeholder="Enter name" name="name" [(ngModel)]="employee.name">
@@ -45,5 +45,5 @@
         <input type="text" class="form-control" name="img" placeholder="Enter level" [(ngModel)]="employee.img">
       </div>
     
-    <button (click)="addEmployee()" type="submit" class="btn btn-primary">Add</button>
+    <button (click)="editEmployee()" type="submit" class="btn btn-primary">Edit</button>
   </form>
