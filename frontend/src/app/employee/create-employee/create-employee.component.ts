@@ -20,7 +20,6 @@ employee!: any
   }
 
   addEmployee(){
-    this.employee.gender = '1';
     this.service.createEmployee(this.employee).subscribe(
       data => {
         console.log(data);
@@ -31,7 +30,6 @@ employee!: any
         console.log(error);
       }
     )
-    console.log(this.employee);
 }
 
 }
