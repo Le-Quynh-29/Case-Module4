@@ -4,6 +4,7 @@ export class Employee{
     gender!: any;
     birth!: any;
     position!: any;
+    positionName!: any;
     address!: any;
     email!: any;
     phone!: number;
