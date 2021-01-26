@@ -11,14 +11,13 @@ class Salary extends Model
     protected $fillable = [
         'month',
         'employee',
-        'dateWord',
+        'dateWork',
         'dayOff',
         'bonus',
-        'tax',
-        'total',
+        'tax'
     ];
 
     function employee(){
-        return $this->hasOne(employee::class);
+        return $this->hasMany(employee::class);
     }
 }

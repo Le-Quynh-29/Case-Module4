@@ -14,7 +14,8 @@ class SalaryController extends Controller
      */
     public function index()
     {
-        //
+        $salarys = Salary::get();
+        return response()->json($salarys, 200);
     }
 
     /**
@@ -24,7 +25,7 @@ class SalaryController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**
@@ -35,7 +36,10 @@ class SalaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $salary = new Salary;
+        $salary->fill($request->all());
+        $salary->save();
+        return response()->json($salary);
     }
 
     /**
@@ -67,9 +71,12 @@ class SalaryController extends Controller
      * @param  \App\Models\Salary  $salary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Salary $salary)
+    public function update(Request $request,$id)
     {
-        //
+        $salary = Salary::find($id);
+        $salary->fill($request->all());
+        $salary->save();
+        return response()->json($salary);
     }
 
     /**
@@ -78,8 +85,10 @@ class SalaryController extends Controller
      * @param  \App\Models\Salary  $salary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Salary $salary)
+    public function destroy($id)
     {
-        //
+        $salary = Salary::find($id);
+        $salary->delete();
+
     }
 }
