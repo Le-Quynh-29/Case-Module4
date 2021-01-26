@@ -7,9 +7,11 @@ import { HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { PositionListComponent } from './position/position-list/position-list.component';
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
+
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 
 
@@ -17,9 +19,11 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
   declarations: [
     AppComponent,
     EmployeeListComponent,
+    PositionListComponent,
     CreateEmployeeComponent,
     SalaryListComponent,
     UpdateEmployeeComponent
+
 
   ],
   imports: [
@@ -27,8 +31,8 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule,
-    
+    NgbModule
+
 
   ],
   providers: [],
