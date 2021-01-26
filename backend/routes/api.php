@@ -24,4 +24,5 @@ Route::prefix('employee')->group(function(){
     Route::get('/{id}','EmployeeController@show');
     Route::put('/{id}','EmployeeController@update');
     Route::delete('/{id}','EmployeeController@destroy');
+    Route::post('/{keyword}','EmployeeController@search');
 });

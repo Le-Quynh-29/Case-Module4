@@ -11,7 +11,7 @@ class Salary extends Model
     protected $fillable = [
         'month',
         'employee',
-        'dateWord',
+        'dateWork',
         'dayOff',
         'bonus',
         'tax',
