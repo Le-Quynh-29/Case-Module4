@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class EmployeeController extends Controller
 {
@@ -14,8 +16,12 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = employee::all();
+        $employees = DB::table('employees')
+        ->join('positions','positions.id','=','employees.position')
+        ->select('positions.position as positionName','employees.*')
+        ->get();
         return response()->json($employees);
+    
     }
 
     /**
@@ -90,5 +96,11 @@ class EmployeeController extends Controller
     {
         $employee = employee::find($id);
         $employee->delete();
+    }
+
+    public function search(Request $request)
+    {
+        $employee = employee::where('name','LIKE','%'.$request->keyword.'%')->get();
+        return response()->json($employee);
     }
 }
