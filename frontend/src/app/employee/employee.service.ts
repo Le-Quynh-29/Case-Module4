@@ -11,4 +11,8 @@ private baseUrl = "http://127.0.0.1:8000/api/employee"
   getEmployeeList(){
     return this.http.get(`${this.baseUrl}`)
   }
+
+  createEmployee(value: any){
+    return this.http.post(`${this.baseUrl}`,value)
+  }
 }

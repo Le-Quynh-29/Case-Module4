@@ -1,0 +1,31 @@
+<!-- <div class="col-md-12 col-xl-8">
+    <div class="card">
+        <div class="card-header">
+            <h5>Statestics</h5> -->
+         <table class="table">
+             <thead style="background: black;color: white;">
+                <th>STT</th>
+                <th>Month</th>
+                <th>Personnel</th>
+                <th>Days to work</th>
+                <th>Number of days off</th>
+                <th>Bonus</th>
+                <th>Tax</th>
+                <th>Total</th>
+             </thead>
+             <tbody>
+                <tr  *ngFor="let salary of salaries">
+                    <td>{{++number}}</td>
+                    <td>{{salary.month}}</td>
+                    <td>{{salary.name}}</td>
+                    <td>{{salary.dateWork}}</td>
+                    <td>{{salary.dayOff}}</td>
+                    <td>{{salary.bonus}}</td>
+                    <td>{{salary.tax}}</td>
+                    <td>{{((salary.money * salary.dateWork) + (salary.bonus)) - (1 -salary.tax/100) }}</td>
+                </tr>
+             </tbody>
+         </table>
+        <!-- </div>
+    </div>
+</div> -->
