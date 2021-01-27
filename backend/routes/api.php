@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('salary')->group(function(){
     Route::get('/','\App\Http\Controllers\SalaryController@index');
+    Route::get('/{id}','\App\Http\Controllers\SalaryController@show');
     Route::post('/','\App\Http\Controllers\SalaryController@store');
     Route::put('/{id}','\App\Http\Controllers\SalaryController@update');
     Route::delete('/{id}','\App\Http\Controllers\SalaryController@destroy');

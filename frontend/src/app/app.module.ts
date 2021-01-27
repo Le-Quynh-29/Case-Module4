@@ -10,12 +10,17 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CreateSalaryComponent } from './salary/create-salary/create-salary.component';
+import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    SalaryListComponent
+    SalaryListComponent,
+    CreateSalaryComponent,
+    CreateSalaryComponent,
+    UpdateSalaryComponent
   ],
   imports: [
     BrowserModule,
