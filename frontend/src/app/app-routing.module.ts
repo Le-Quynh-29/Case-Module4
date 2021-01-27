@@ -8,6 +8,7 @@ import { CreateEmployeeComponent } from './employee/create-employee/create-emplo
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { CreateSalaryComponent } from './salary/create-salary/create-salary.component';
 import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
+import { LoginComponent } from './login/login.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
     path: 'positions',
     component: PositionListComponent
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
 
 ];
 

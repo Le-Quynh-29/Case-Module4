@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'layout';
+
+  logout(){
+    localStorage.removeItem("AccessToken");
+  }
+
+  checkLogin(){
+    if(localStorage.getItem("AccessToken")){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }
