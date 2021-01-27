@@ -50,4 +50,8 @@ export class UpdateSalaryComponent implements OnInit {
       }
     )
   }
+
+  gotoList() {
+    this.router.navigate(['salary']);
+  }
 }

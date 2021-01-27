@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CreateSalaryComponent } from './salary/create-salary/create-salary.component';
 import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
     CreateSalaryComponent,
     CreateSalaryComponent,
     UpdateSalaryComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
