@@ -9,9 +9,11 @@ import { MatSliderModule } from '@angular/material/slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { PositionListComponent } from './position/position-list/position-list.component';
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
+
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,9 +22,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     EmployeeListComponent,
+    PositionListComponent,
     CreateEmployeeComponent,
     SalaryListComponent,
     UpdateEmployeeComponent
+
 
   ],
   imports: [
@@ -30,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgModule,
     NgbModule,
     BrowserAnimationsModule,
     MatSliderModule,

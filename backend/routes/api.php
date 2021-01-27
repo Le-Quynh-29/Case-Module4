@@ -27,8 +27,24 @@ Route::prefix('salary')->group(function(){
 Route::prefix('employee')->group(function(){
     Route::get('/','EmployeeController@index');
     Route::post('/','EmployeeController@store');
-    Route::get('/{id}','EmployeeController@show');
+    Route::get('/show/{id}','EmployeeController@show');
+    Route::get('/{id}','EmployeeController@edit');
     Route::put('/{id}','EmployeeController@update');
     Route::delete('/{id}','EmployeeController@destroy');
     Route::post('/{keyword}','EmployeeController@search');
+});
+
+
+//POSITION
+
+Route::prefix('positions')->group(function(){
+  Route::get('/','\App\Http\Controllers\PositionController@index');
+  Route::post('/','\App\Http\Controllers\PositionController@store');
+  Route::get('/{id}','\App\Http\Controllers\PositionController@show');
+  Route::put('/{id}','\App\Http\Controllers\PositionController@update');
+  Route::delete('/{id}','\App\Http\Controllers\PositionController@destroy');
+  Route::post('/{position}','\App\Http\Controllers\PositionController@search');
+
+
+
 });

@@ -1,7 +1,10 @@
+import { PositionService } from './../../position/position.service';
 import { EmployeeService } from './../employee.service';
-import { Employee } from './../employee';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Employee } from '../employee';
+import { Position } from 'src/app/position/position';
+
 
 @Component({
   selector: 'app-update-employee',
@@ -9,23 +12,27 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./update-employee.component.scss']
 })
 export class UpdateEmployeeComponent implements OnInit {
+  
 employee!: any
   id!: any;
+  positions!: any;
   constructor(private route: ActivatedRoute,
     private router:Router,
-    private service: EmployeeService) { }
+    private service: EmployeeService,
+    private positionService: PositionService
+    ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
 
-    this.service.getEmployee(this.id).subscribe(
+    this.employee = this.service.getEmployee(this.id);
+
+    this.positionService.getPositionList().subscribe(
       data =>{
-        this.employee = data;
-        console.log(this.employee);
-      },error => {
-        console.log(error);
+        this.positions = data
+      },error=> {
+        console.log(error)
       }
-      
     )
   }
 
@@ -38,5 +45,7 @@ employee!: any
       }
     )
   }
+
+ 
 
 }

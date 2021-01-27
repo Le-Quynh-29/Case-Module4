@@ -22,10 +22,10 @@ class employee extends Model
     ];
 
     function position(){
-        return $this->hasMany(Position::class);
+        return $this->beLongTo(Position::class);
     }
 
     function salary(){
-        return $this->beLongTo(Salary::class);
+        return $this->hasMany(Salary::class);
     }
 }

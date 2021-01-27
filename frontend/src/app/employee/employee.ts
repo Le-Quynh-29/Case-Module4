@@ -10,5 +10,5 @@ export class Employee{
     phone!: number;
     date!: any;
     level!: any;
-    img	!: any;
+    img!: any;
 }

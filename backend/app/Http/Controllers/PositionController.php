@@ -14,7 +14,8 @@ class PositionController extends Controller
      */
     public function index()
     {
-        //
+        $position = Position::all();
+        return response()->json($position);
     }
 
     /**
@@ -35,7 +36,10 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $position = new Position();
+        $position->fill($request->all());
+        $position->save();
+        return reponse()->json($position);
     }
 
     /**
@@ -44,11 +48,11 @@ class PositionController extends Controller
      * @param  \App\Models\Position  $position
      * @return \Illuminate\Http\Response
      */
-    public function show(Position $position)
+    public function show($id)
     {
-        //
+        $position = Position::find($id);
+        return response()->json($position);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -67,9 +71,13 @@ class PositionController extends Controller
      * @param  \App\Models\Position  $position
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Position $position)
+    public function update(Request $request, $id)
     {
-        //
+        $position = Position::find($id);
+        $position->fill($request->all());
+        $position->save();
+        return response()->json($position);
+
     }
 
     /**
@@ -78,8 +86,18 @@ class PositionController extends Controller
      * @param  \App\Models\Position  $position
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Position $position)
+    public function destroy($id)
     {
-        //
+        $position = Position::find($id);
+        $position->delete();
+
     }
+
+    public function search(Request $request)
+    {
+        $position = position::where('name','LIKE','%'.$request->keyword.'%')->get();
+        return response()->json($position);
+    }
+
+
 }

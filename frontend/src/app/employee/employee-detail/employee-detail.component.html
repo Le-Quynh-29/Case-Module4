@@ -16,28 +16,34 @@
                                                         <th>Phone</th>
                                                         <th>Join date</th>
                                                         <th>Level</th>
+                                                        <th>Month</th>
+                                                        <th>Date Work</th>
+                                                        <th>Day Off</th>
+                                                        <th>Bonus</th>
                                                         <th>Image</th>
-                                                        <th>Action</th>
+                                                       
                                                     </tr>
                                                 </thead>
-                                                <tbody *ngFor = "let employee of employees">
+                                                <tbody >
                                                     <tr class="table-active">
 
                                                         <th scope="row">{{employee.id}}</th>
-                                                        <td><a routerLink="show/{{employee.id}}">{{employee.name}}</a></td>
+                                                        <td>{{employee.name}}</td>
                                                         <td>{{employee.gender}}</td>
                                                         <td>{{employee.birth}}</td>
-                                                        <td>{{employee.positionName}}</td>
+                                                        <td>{{employee.position}}</td>
                                                         <td>{{employee.address}}</td>
                                                         <td>{{employee.email}}</td>
                                                         <td>{{employee.phone}}</td>
                                                         <td>{{employee.date}}</td>
                                                         <td>{{employee.level}}</td>
+                                                        <td>{{employee.month}}</td>
+                                                        <td>{{employee.dateWork}}</td>
+                                                        <td>{{employee.dayOff}}</td>
+                                                        <td>{{employee.bonus}}</td>
+                                                        <td>{{employee.tax}}</td>
                                                         <td><img src="{{employee.img}}" width="100px" height="100px" ></td>
-                                                        <td>
-                                                            <a class="btn btn-info" routerLink="edit/{{employee.id}}" >edit</a>
-                                                            <button (click)="deleteEmployee(employee.id)" class="btn btn-danger">delete</button>
-                                                        </td>
+                                                        
                                                     </tr>
                                                     
                                                 </tbody>

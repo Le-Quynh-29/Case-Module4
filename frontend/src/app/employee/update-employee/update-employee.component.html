@@ -6,7 +6,10 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Gender</label>
-       
+        <!-- <select name="gender" [(ngModel)]="employee.gender" >
+          <option value="Nam">Nam</option>
+          <option value="Nữ">Nữ</option>
+        </select> -->
 
         <input type="text" class="form-control" name="gender" placeholder="Enter gender" [(ngModel)]="employee.gender">
       </div>
@@ -17,8 +20,10 @@
       </div>
       <div class="form-group" >
         <label for="exampleInputEmail1">Position</label>
-        <input type="text" class="form-control" name="position" placeholder="Enter position" [(ngModel)]="employee.positionName">
-        
+        <!-- <input type="text" class="form-control" name="position" placeholder="Enter position" [(ngModel)]="employee.position"> -->
+        <select *ngFor="let position of positions" name="position" [(ngModel)]="employee.position">
+          <option value={{position.id}} >{{position.position}}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Address</label>
@@ -42,6 +47,9 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Image</label>
+        <!-- <div class="form-group col-12">
+          <input type="file"  name="img"[(ngModel)]="employee.img" autocomplete="off"/>
+         </div> -->
         <input type="text" class="form-control" name="img" placeholder="Enter level" [(ngModel)]="employee.img">
       </div>
     

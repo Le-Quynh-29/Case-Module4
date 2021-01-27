@@ -14,4 +14,8 @@ getSalaryList(){
   return this.http.get(`${this.baseUrl}`)
 }
 
+getSalary(id: number){
+  return this.http.get(`${this.baseUrl}/${id}`)
+}
+
 }
