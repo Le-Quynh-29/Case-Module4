@@ -8,8 +8,7 @@ import { SalaryService } from '../salary.service';
   styleUrls: ['./salary-list.component.scss']
 })
 export class SalaryListComponent implements OnInit {
-salaries!: any
-number: number = 1
+salaries!: any;
   constructor(
     private salaryService: SalaryService,
     private router: Router
@@ -17,6 +16,17 @@ number: number = 1
 
   ngOnInit(): void {
     this.loadData()
+  }
+
+
+  deleteSalary(id: number) {
+    this.salaryService.deleteSalary(id)
+      .subscribe(
+        (data: any)=>{
+          console.log(data);
+          this.loadData();
+        },
+        (error: any)=>console.log(error));
   }
 
   loadData(){

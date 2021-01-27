@@ -11,9 +11,9 @@ import { PositionListComponent } from './position/position-list/position-list.co
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
-
+import { CreateSalaryComponent } from './salary/create-salary/create-salary.component';
+import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
-
 
 @NgModule({
   declarations: [
@@ -22,9 +22,10 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
     PositionListComponent,
     CreateEmployeeComponent,
     SalaryListComponent,
+    CreateSalaryComponent,
+    CreateSalaryComponent,
+    UpdateSalaryComponent,
     UpdateEmployeeComponent
-
-
   ],
   imports: [
     BrowserModule,
