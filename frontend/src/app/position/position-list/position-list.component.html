@@ -1,31 +1,93 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 outer-ellipsis"><i class="ti-plus"></i>
+    </div>
+</button>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">ADD Position</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="icon-list-demo">
+                            <i id="icon" class="fa fa-wpbeginner fa-lg"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            Position:
+                            <input class="form-control" type="text" id="name" placeholder="Enter position..."
+                                name="position" [(ngModel)]="position.position">
+                        </div>
+                        <div class="form-group">
+                            Description:
+                            <input class="form-control" type="text" id="code" placeholder="Enter description..."
+                                name="description" [(ngModel)]="position.description">
+                        </div>
+                        <div class="form-group">
+                            Money:
+                            <input class="form-control" type="text" id="code" placeholder="Enter money..." name="money"
+                                [(ngModel)]="position.money">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" (click)="createPosition()" data-bs-dismiss="modal"
+                    class="btn btn-primary">ADD</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
 <div class="page-body">
     <div class="row">
         <div class="col-sm-12">
-            <!-- Badges card start -->
-            <div class="card" style="width: 900px !important;">
+            <div class="card" style="width: 1000px !important;">
                 <div class="card-header">
-
-
-                    <h5>POSITION</h5>
-                    <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-
+                    <h3>POSITION</h3>
                     <div class="card-block">
                         <div class="row">
                             <div *ngFor="let position of positions" class="col-lg-6">
                                 <div class="badge-box">
-                                    <div style=" font-style: italic;font-weight: bold;" class="sub-title">CHUC
-                                        VU:{{position.position}}
+                                    <div style=" font-size: 35px; font-style: italic;font-weight: bold; background-color: lightseagreen;"
+                                        class="sub-title">
+                                        <a routerLink="show/{{position.id}}">
+                                            POSITION :{{position.position}}
+                                        </a>
                                     </div>
-                                    <p> MO TA: <td>{{position.description}}</td>
-                                    </p>
+                                    <th> Description : </th> <td>{{position.description}}</td>
+                                   
                                     <hr>
-                                    <p>Money :
+                                    <th>Money :
+                                    </th>
+                                        <td> <label style="font-size: 15px;"
+                                                class="badge badge-primary">{{position.money}}</label></td>
+                                       
+                                    <hr>
 
-                                        <td> <label class="badge badge-primary">{{position.money}}</label></td>
-                                    </p>
+                                    <button><a routerLink="update/{{position.id}}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                            </svg>
+                                        </a>
+                                    </button>
+
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

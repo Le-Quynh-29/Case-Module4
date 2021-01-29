@@ -6,6 +6,9 @@ import { PositionListComponent } from './position/position-list/position-list.co
 
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
+import { PositionEditComponent } from './position/position-edit/position-edit.component';
+import { PositionService } from './position/position.service';
+import { PositionDetailComponent } from './position/position-detail/position-detail.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -30,7 +33,10 @@ const routes: Routes = [
   },
 
 
-  { path: 'employees/edit/:id', component: UpdateEmployeeComponent }
+  { path: 'employees/edit/:id', component: UpdateEmployeeComponent },
+
+  {path: 'positions/update/:id',component:PositionEditComponent },
+  {path:'positions/show/:id',component:PositionDetailComponent}
 ];
 
 @NgModule({

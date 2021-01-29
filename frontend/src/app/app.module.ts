@@ -13,6 +13,8 @@ import { SalaryListComponent } from './salary/salary-list/salary-list.component'
 import { FormsModule } from '@angular/forms';
 
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
+import { PositionEditComponent } from './position/position-edit/position-edit.component';
+import { PositionDetailComponent } from './position/position-detail/position-detail.component';
 
 
 @NgModule({
@@ -22,8 +24,9 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
     PositionListComponent,
     CreateEmployeeComponent,
     SalaryListComponent,
-    UpdateEmployeeComponent
-
+    UpdateEmployeeComponent,
+    PositionEditComponent,
+    PositionDetailComponent
 
   ],
   imports: [
