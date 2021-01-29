@@ -11,10 +11,15 @@ import { PositionListComponent } from './position/position-list/position-list.co
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
-
+import { CreateSalaryComponent } from './salary/create-salary/create-salary.component';
+import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
+
 import { PositionEditComponent } from './position/position-edit/position-edit.component';
 import { PositionDetailComponent } from './position/position-detail/position-detail.component';
+
+
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -24,9 +29,17 @@ import { PositionDetailComponent } from './position/position-detail/position-det
     PositionListComponent,
     CreateEmployeeComponent,
     SalaryListComponent,
+
     UpdateEmployeeComponent,
     PositionEditComponent,
-    PositionDetailComponent
+    PositionDetailComponent,
+
+
+    CreateSalaryComponent,
+    CreateSalaryComponent,
+    UpdateSalaryComponent,
+    UpdateEmployeeComponent,
+    LoginComponent
 
   ],
   imports: [

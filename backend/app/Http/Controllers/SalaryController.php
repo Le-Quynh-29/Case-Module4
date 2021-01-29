@@ -60,9 +60,10 @@ class SalaryController extends Controller
      * @param  \App\Models\Salary  $salary
      * @return \Illuminate\Http\Response
      */
-    public function show(Salary $salary)
+    public function show($id)
     {
-        //
+        $salary =  Salary::find($id);
+        return response()->json($salary);
     }
 
     /**

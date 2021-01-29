@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('salary')->group(function(){
     Route::get('/','\App\Http\Controllers\SalaryController@index');
+    Route::get('/{id}','\App\Http\Controllers\SalaryController@show');
     Route::post('/','\App\Http\Controllers\SalaryController@store');
     Route::put('/{id}','\App\Http\Controllers\SalaryController@update');
     Route::delete('/{id}','\App\Http\Controllers\SalaryController@destroy');
@@ -48,3 +49,11 @@ Route::prefix('positions')->group(function(){
 
 
 });
+
+// jwt-authenticate api
+Route::group(['middleware' => ['jwt.verify']], function() {
+    Route::get('user', '\App\Http\Controllers\UserController@getAuthenticatedUser');
+
+});
+Route::post('login', '\App\Http\Controllers\UserController@authenticate');
+Route::post('lognup', '\App\Http\Controllers\UserController@register');
