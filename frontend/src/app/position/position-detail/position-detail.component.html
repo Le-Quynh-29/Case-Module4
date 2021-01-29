@@ -1,0 +1,51 @@
+
+
+<div class="page-body">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="width: 1100px !important;">
+                <div class="modal-footer">
+                    <button type="button" (click)="cancle()" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+                </div>
+                <div class="card-header">
+                    <h3> POSITION :{{positions[0].position}}</h3>
+                  <hr>
+                  <div class="card-block">
+                    <div class="row">
+                        <div *ngFor="let position of positions" class="col-lg-6">
+                            <div class="badge-box">
+                               
+                                    <div style=" font-size: 20px; font-style: italic;font-weight: bold; background-color: lightseagreen;"
+                                        class="sub-title">
+                                        Name:{{position.name}}
+                                    </div>
+
+                                    <th>Gender : </th>
+                                    <td>{{position.gender}}</td>
+                                    <hr>
+                                    <th>Birth :</th>
+                                    <td>{{position.birth}}</td> 
+                                    <hr>
+                                    <th>Add : </th> 
+                                    <td>{{position.address}}</td>
+                                    <hr>
+                                    <th>Email : </th> 
+                                    <td>{{position.email}}</td>
+                                    <hr>
+                                    <th>Phone : </th> 
+                                    <td>{{position.phone}}</td>
+                                    <hr>
+                                    <th>Date : </th>
+                                    <td>{{position.date}}</td> 
+                                    <hr>
+                                    <th>Level : </th>
+                                    <td> {{position.level}}</td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

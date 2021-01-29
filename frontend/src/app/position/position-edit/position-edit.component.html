@@ -1,0 +1,39 @@
+<div style="width: 800px;" class="modal-content">
+    <div class="modal-header">
+        <h4 style="font-style: italic; font-size: 30px; color: mediumblue;" class="modal-title" id="myModalLabel">Update
+            Position</h4>
+      
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="icon-list-demo">
+
+                    <hr >
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div style="font-size: 20px;font-style: italic; " class="form-group">
+                    Position:
+                    <input style="width: 500px;" class="form-control" type="text" name="position"
+                        [(ngModel)]="position.position">
+                </div>
+                <div style="font-size: 20px;font-style: italic; " class="form-group">
+                    Description:
+                    <input style="width: 500px;" class="form-control" type="text" name="description"
+                        [(ngModel)]="position.description">
+                </div>
+                <div style="font-size: 20px;font-style: italic; " class="form-group">
+                    Money:
+                    <input style="width: 500px;" class="form-control" type="text" name="money"
+                        [(ngModel)]="position.money">
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" (click)="cancle()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" (click)="updatePosition()" class="btn btn-primary">Update</button>
+    </div>
+</div>

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Position;
+use App\Modules\employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+ 
 
 class PositionController extends Controller
 {
@@ -16,6 +19,9 @@ class PositionController extends Controller
     {
         $position = Position::all();
         return response()->json($position);
+
+
+        
     }
 
     /**
@@ -39,7 +45,7 @@ class PositionController extends Controller
         $position = new Position();
         $position->fill($request->all());
         $position->save();
-        return reponse()->json($position);
+        return response()->json($position);
     }
 
     /**
@@ -49,9 +55,13 @@ class PositionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $position = Position::find($id);
-        return response()->json($position);
+    {     
+           $positions = DB::table('positions')
+        ->select('employees.*','positions.*')
+        ->join('employees','positions.id','=','employees.position')
+        ->where('positions.id','=',$id)
+        ->get();
+        return response()->json($positions, 200);
     }
     /**
      * Show the form for editing the specified resource.
@@ -59,9 +69,10 @@ class PositionController extends Controller
      * @param  \App\Models\Position  $position
      * @return \Illuminate\Http\Response
      */
-    public function edit(Position $position)
+    public function edit($id)
     {
-        //
+        $position = Position::find($id);
+        return response()->json($position);
     }
 
     /**
@@ -86,12 +97,15 @@ class PositionController extends Controller
      * @param  \App\Models\Position  $position
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $position = Position::find($id);
-        $position->delete();
+    // public function destroy($id)
+    // {
+    //     $employee = employess::find($id);
+    //     $employee->salary()->delete();
+    //     $position = Position::find($id);
+    //     $position->employee()->delete();
+    //     $position->delete();
+    // }
 
-    }
 
     public function search(Request $request)
     {
