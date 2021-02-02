@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
+  [x: string]: any;
 private baseUrl = "http://127.0.0.1:8000/api/employee"
   constructor(private http:HttpClient) { }
 
@@ -23,5 +24,17 @@ private baseUrl = "http://127.0.0.1:8000/api/employee"
 
   getEmployee(id: number){
     return this.http.get(`${this.baseUrl}/${id}`)
+  }
+
+  deleteEmployee(id: number){
+    return this.http.delete(`${this.baseUrl}/${id}`)
+  }
+
+  getEmployeeDetail(id: number){
+    return this.http.get(`${this.baseUrl}/show/${id}`)
+  }
+
+  getSearch(keywork: string,value: any){
+    return this.http.post(`${this.baseUrl}/${keywork}`,value)
   }
 }

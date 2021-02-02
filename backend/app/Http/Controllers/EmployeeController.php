@@ -59,8 +59,9 @@ class EmployeeController extends Controller
         $employee = employee::find($id);
         $employee = DB::table('employees')
         ->join('salaries','employees.id','=','salaries.employee')
-        ->select('salarie.*','employees.*')
-        ->get();
+        ->select('salaries.*','employees.*')
+        ->where('employees.id','=',$id)
+        ->first();
         return response()->json($employee);
     }
 
@@ -70,9 +71,10 @@ class EmployeeController extends Controller
      * @param  \App\Models\employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(employee $employee)
+    public function edit( $id)
     {
-        //
+        $employee = employee::find($id);
+        return response()->json($employee);
     }
 
     /**
@@ -98,7 +100,9 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
+        
         $employee = employee::find($id);
+        DB::table('salaries')->where('employee',"=",$id)->delete();
         $employee->delete();
     }
 

@@ -10,12 +10,15 @@ export class PositionService {
   
 
   private baseUrl = "http://127.0.0.1:8000/api/positions"
+  getPosition: any;
   constructor(private http:HttpClient) { }
 
   getPositionList(){
     return this.http.get(`${this.baseUrl}`)
   }
 
+    
+  
   createPosition(value: any){
     return this.http.post(`${this.baseUrl}`,value);
   }
@@ -29,9 +32,9 @@ export class PositionService {
   }
 
 
-  getPosition(id: number){
-    return this.http.get(`${this.baseUrl}/${id}`);
-  }
+  // getPosition(id: number){
+  //   return this.http.get(`${this.baseUrl}/${id}`);
+  // }
 
   getPositionDetail(id: number){
     return this.http.get(`${this.baseUrl}/show/${id}`)
