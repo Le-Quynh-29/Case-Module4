@@ -28,4 +28,6 @@ class employee extends Model
     function salary(){
         return $this->hasMany(Salary::class);
     }
+
+   
 }

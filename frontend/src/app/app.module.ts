@@ -20,6 +20,13 @@ import { CreateSalaryComponent } from './salary/create-salary/create-salary.comp
 import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 
+import { PositionEditComponent } from './position/position-edit/position-edit.component';
+import { PositionDetailComponent } from './position/position-detail/position-detail.component';
+
+
+import { LoginComponent } from './login/login.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,10 +34,18 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
     PositionListComponent,
     CreateEmployeeComponent,
     SalaryListComponent,
+
+    UpdateEmployeeComponent,
+    PositionEditComponent,
+    PositionDetailComponent,
+
+
     CreateSalaryComponent,
     CreateSalaryComponent,
     UpdateSalaryComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,8 @@ class Position extends Model
     ];
 
     function employee(){
-        return $this->beLongTo(employee::class);
+        return $this->hasMany(employee::class,'position');
+
     }
+    
 }

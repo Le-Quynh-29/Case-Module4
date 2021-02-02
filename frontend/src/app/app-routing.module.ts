@@ -7,8 +7,15 @@ import { PositionListComponent } from './position/position-list/position-list.co
 
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
+
+import { PositionEditComponent } from './position/position-edit/position-edit.component';
+import { PositionService } from './position/position.service';
+import { PositionDetailComponent } from './position/position-detail/position-detail.component';
+
 import { CreateSalaryComponent } from './salary/create-salary/create-salary.component';
 import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
+import { LoginComponent } from './login/login.component';
+
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
@@ -39,6 +46,14 @@ const routes: Routes = [
     path: 'positions',
     component: PositionListComponent
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  { path: 'employees/edit/:id', component: UpdateEmployeeComponent },
+
+  {path: 'positions/update/:id',component:PositionEditComponent },
+  {path:'positions/show/:id',component:PositionDetailComponent},
 
 
   { path: 'employees/edit/:id', component: UpdateEmployeeComponent },

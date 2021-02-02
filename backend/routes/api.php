@@ -41,7 +41,8 @@ Route::prefix('employee')->group(function(){
 Route::prefix('positions')->group(function(){
   Route::get('/','\App\Http\Controllers\PositionController@index');
   Route::post('/','\App\Http\Controllers\PositionController@store');
-  Route::get('/{id}','\App\Http\Controllers\PositionController@show');
+  Route::get('/show/{id}','\App\Http\Controllers\PositionController@show');
+  Route::get('/{id}','\App\Http\Controllers\PositionController@edit');
   Route::put('/{id}','\App\Http\Controllers\PositionController@update');
   Route::delete('/{id}','\App\Http\Controllers\PositionController@destroy');
   Route::post('/{position}','\App\Http\Controllers\PositionController@search');
@@ -49,3 +50,11 @@ Route::prefix('positions')->group(function(){
 
 
 });
+
+// jwt-authenticate api
+Route::group(['middleware' => ['jwt.verify']], function() {
+    Route::get('user', '\App\Http\Controllers\UserController@getAuthenticatedUser');
+
+});
+Route::post('login', '\App\Http\Controllers\UserController@authenticate');
+Route::post('lognup', '\App\Http\Controllers\UserController@register');
