@@ -34,5 +34,7 @@ private baseUrl = "http://127.0.0.1:8000/api/employee"
     return this.http.get(`${this.baseUrl}/show/${id}`)
   }
 
-  
+  getSearch(keywork: string,value: any){
+    return this.http.post(`${this.baseUrl}/${keywork}`,value)
+  }
 }

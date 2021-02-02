@@ -60,6 +60,7 @@ class EmployeeController extends Controller
         $employee = DB::table('employees')
         ->join('salaries','employees.id','=','salaries.employee')
         ->select('salaries.*','employees.*')
+        ->where('employees.id','=',$id)
         ->first();
         return response()->json($employee);
     }
@@ -101,7 +102,7 @@ class EmployeeController extends Controller
     {
         
         $employee = employee::find($id);
-        // $employee->salary()->delete();
+        DB::table('salaries')->where('employee',"=",$id)->delete();
         $employee->delete();
     }
 

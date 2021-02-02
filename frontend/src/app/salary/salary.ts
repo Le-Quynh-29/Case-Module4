@@ -1,4 +1,5 @@
 export class Salary{
+    [x: string]: any;
     id!: number;
     month!: string;
     employee!: number;

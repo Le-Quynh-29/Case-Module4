@@ -1,9 +1,16 @@
 
-                                <div class="card ">
+                                <!-- <div class="card ">
                                 
                                     <div class="card-block table-border-style">
-                                        <div class="table-responsive">
-                                            <table class="table">
+                                        <div class="table-responsive"> -->
+                                            <div class="pcoded-search">
+                                                <span class="searchbar-toggle"> </span>
+                                                <div class="pcoded-search-box ">
+                                                    <input type="text" placeholder="Search" [(ngModel)]="keywork">
+                                                    <button class="btn btn-primary" (click)="search()">Search</button>
+                                                </div>
+                                            </div>
+                                            <table style="width: 1500px;" class="table">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
@@ -20,8 +27,8 @@
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody *ngFor = "let employee of employees">
-                                                    <tr class="table-active">
+                                                <tbody>
+                                                    <tr *ngFor = "let employee of employees" >
 
                                                         <th scope="row">{{employee.id}}</th>
                                                         <td><a routerLink="show/{{employee.id}}">{{employee.name}}</a></td>
@@ -36,14 +43,16 @@
                                                         <td><img src="{{employee.img}}" width="100px" height="100px" ></td>
                                                         <td>
                                                             <a class="btn btn-info" routerLink="edit/{{employee.id}}" >edit</a>
+                                                            <!-- <a class="btn btn-danger" routerLink="delete/{{employee.id}}" onclick="return confirm('Bạn có chắc chắn muốn xóa ?')" >delete</a> -->
                                                             <button (click)="deleteEmployee(employee.id)" class="btn btn-danger">delete</button>
                                                         </td>
                                                     </tr>
                                                     
                                                 </tbody>
                                             </table>
-                                        </div>
+                                            
+                                        <!-- </div>
                                     </div>
                                 </div>
-                                
+                                 -->
                               

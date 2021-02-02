@@ -2,9 +2,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
-import { MatSliderModule } from '@angular/material/slider';
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
+import {
+  AngularFireStorageModule,
 
-
+} from "@angular/fire/storage";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,10 +16,9 @@ import { PositionListComponent } from './position/position-list/position-list.co
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { FormsModule } from '@angular/forms';
-
+import { CreateSalaryComponent } from './salary/create-salary/create-salary.component';
+import { UpdateSalaryComponent } from './salary/update-salary/update-salary.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 @NgModule({
   declarations: [
@@ -25,20 +27,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PositionListComponent,
     CreateEmployeeComponent,
     SalaryListComponent,
+    CreateSalaryComponent,
+    CreateSalaryComponent,
+    UpdateSalaryComponent,
     UpdateEmployeeComponent
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgModule,
     NgbModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+
 
   ],
   providers: [],

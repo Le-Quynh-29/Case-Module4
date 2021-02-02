@@ -1,4 +1,4 @@
-
+<!-- 
                                 <div class="card ">
                                 
                                     <div class="card-block table-border-style">
@@ -20,6 +20,7 @@
                                                         <th>Date Work</th>
                                                         <th>Day Off</th>
                                                         <th>Bonus</th>
+                                                        <th>Tax</th>
                                                         <th>Image</th>
                                                        
                                                     </tr>
@@ -52,4 +53,104 @@
                                     </div>
                                 </div>
                                 
-                              
+                               -->
+
+
+<div class="page-body">
+    <div class="row">
+        <div class="col-lg-6">
+            <div style="width: 750px;">
+                <!-- Badges card start -->
+                <div class="card">
+                    <div  style="background-color:mediumseagreen;" class="card-header">
+                        <div class="card-header-left">
+                            <p style="font-size: 30px;">EMPLOYEE</p>
+                        </div>
+                        <div class="card-header-right"> <i class="icofont icofont-spinner-alt-5"></i> </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-lg-12 col-xl-12 col-sm-12">
+                                <div class="badge-box">
+                                    <th></th>
+                                    <td><img src="{{employee.img}}" height="100px" width="100px" ></td>
+                                    <hr>
+                                    <th>Name Emloyee :</th>
+                                    <td>{{employee.name}}</td>
+                                    <hr>
+                                    <th>Gender :</th>
+                                    <td>{{employee.gender}}</td>
+                                    <hr>
+                                    <th>Dob :</th>
+                                    <td>{{employee.birth}}</td>
+                                    <hr>
+                                    <th>Position :</th>
+                                    <td>{{employee.position}}</td>
+                                    <hr>
+                                    <th>Address :</th>
+                                    <td>{{employee.address}}</td>
+                                    <hr>
+                                    <th>Email :</th>
+                                    <td>{{employee.email}}</td>
+                                    <hr>
+                                    <th>Phone :</th>
+                                    <td>{{employee.phone}}</td>
+                                    <hr>
+                                    <th>Join Date :</th>
+                                    <td>{{employee.date}}</td>
+                                    <hr>
+                                    <th>Level :</th>
+                                    <td>{{employee.level}}</td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <div style="width: 700px;">
+                <!-- Badges card start -->
+                <div class="card">
+                    <div  style="background-color:rgb(216, 79, 109);"  class="card-header">
+                        <div class="card-header-left">
+                            <p style="font-size: 30px;">SALARY</p>
+                        </div>
+                        <div class="card-header-right"> <i class="icofont icofont-spinner-alt-5"></i> </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-lg-12 col-xl-12 col-sm-12">
+                                <div class="badge-box">
+                                    <th>Month :</th>
+                                    <td>{{employee.month}}</td>
+                                    <hr>
+                                    <th>Date Work :</th>
+                                    <td>{{employee.dateWork}}</td>
+                                    <hr>
+                                    <th>Day Off :</th>
+                                    <td>{{employee.dayOff}}</td>
+                                    <hr>
+                                    <th>Bonus :</th>
+                                    <td>{{employee.bonus}}</td>
+                                    <hr>
+                                    <th>Tax :</th>
+                                    <td>{{employee.tax}}</td>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+       
+       
+
+    </div>
+
+</div>

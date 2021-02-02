@@ -25,7 +25,13 @@ employee!: any
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
 
-    this.employee = this.service.getEmployee(this.id);
+    this.service.getEmployee(this.id).subscribe(
+      data =>{
+        this.employee = data
+      },error =>{
+        console.log(error);
+      }
+    );
 
     this.positionService.getPositionList().subscribe(
       data =>{
@@ -46,6 +52,8 @@ employee!: any
     )
   }
 
- 
+  
 
-}
+  }
+
+

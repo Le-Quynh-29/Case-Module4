@@ -6,6 +6,7 @@ import { Employee } from '../employee';
 import { Position } from 'src/app/position/position';
 import { finalize } from 'rxjs/internal/operators/finalize';
 import { Observable } from 'rxjs/internal/Observable';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-create-employee',
@@ -24,6 +25,7 @@ fb: any;
     private service: EmployeeService,
     private router: Router,
     private positionService: PositionService,
+    private storage: AngularFireStorage
     
   ) { }
 positionList: Position[] = []
@@ -33,6 +35,7 @@ positionList: Position[] = []
   }
 
   addEmployee(){
+    this.employee.img = this.srcImg;  
     console.log(this.employee);
     this.service.createEmployee(this.employee).subscribe(
       data => {
@@ -80,7 +83,7 @@ positionList: Position[] = []
       .subscribe((url: any) => {
         if (url) {
 
-          // console.log(url);
+           console.log(url);
         }
       });
   }

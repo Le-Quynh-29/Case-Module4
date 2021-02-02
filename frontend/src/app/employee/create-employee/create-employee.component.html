@@ -1,58 +1,67 @@
-<form>
-    <h2>Add Employee</h2>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Name Employee</label>
-        <input type="text" class="form-control" placeholder="Enter name" name="name" [(ngModel)]="employee.name">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Gender</label>
-        <!-- <input type="text" class="form-control" name="gender" placeholder="Enter gender" [(ngModel)]="employee.gender"> -->
-        <select name="gender" [(ngModel)]="employee.gender" >
-          <option value="Nam">Nam</option>
-          <option value="Nữ">Nữ</option>
-        </select>
+<div style="width: 1200px" class="modal-content">
+  <div class="modal-header">
+    <h4 style="font-style: italic; font-size: 30px; color: mediumblue;" class="modal-title" id="myModalLabel">Add
+      Employee</h4>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="icon-list-demo">
+            <i id="icon" class="fa fa-wpbeginner fa-lg"></i>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div style="font-size: 20px;font-style: italic; " class="form-group">
+            Name Employee:
+            <input type="text" class="form-control" placeholder="Enter name" name="name" [(ngModel)]="employee.name"
+              ng-required="true">
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Gender:
+            <!-- <input type="text" class="form-control" name="gender" placeholder="Enter gender" [(ngModel)]="employee.gender"> -->
+            <select name="gender" [(ngModel)]="employee.gender">
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+            </select>
 
 
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">DOB:
+            <input type="date" class="form-control" name="birth" placeholder="Enter birth" [(ngModel)]="employee.birth">
+
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Position:
+            <!-- <input type="text" class="form-control" name="position" placeholder="Enter position" [(ngModel)]="employee.positionName">   -->
+            <select *ngFor="let position of positions" name="position" [(ngModel)]="employee.position">
+              <option value={{position.id}}>{{position.position}}</option>
+            </select>
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Address:
+            <input type="text" class="form-control" name="address" placeholder="Enter address"
+              [(ngModel)]="employee.address">
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Email:
+            <input type="email" class="form-control" name="email" placeholder="Enter email"
+              [(ngModel)]="employee.email">
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Phone:
+            <input type="number" class="form-control" name="phone" placeholder="Enter phone"
+              [(ngModel)]="employee.phone">
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Date:
+            <input type="date" class="form-control" name="date" placeholder="Enter date" [(ngModel)]="employee.date">
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Level:
+            <input type="text" class="form-control" name="level" placeholder="Enter level" [(ngModel)]="employee.level">
+          </div>
+          <div style="font-size: 20px;font-style: italic; " class="form-group">Image:
+            <div class="form-group col-12">
+              <input type="file" id="file" #userPhoto (change)="onFileSelected($event)" name="img"
+                [(ngModel)]="employee.img" autocomplete="off" />
+            </div>
+            <!-- <input type="text" class="form-control" name="img" placeholder="Enter level" [(ngModel)]="employee.img"> -->
+          </div>
+
+          <button (click)="addEmployee()" type="submit" class="btn btn-primary">Add</button>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">DOB</label>
-        <input type="date" class="form-control" name="birth" placeholder="Enter birth"[(ngModel)]="employee.birth">
-        
-      </div>
-      <div class="form-group" >
-        <label for="exampleInputEmail1">Position</label>
-        <!-- <input type="text" class="form-control" name="position" placeholder="Enter position" [(ngModel)]="employee.positionName">   -->
-        <select *ngFor="let position of positions" name="position" [(ngModel)]="employee.position">
-          <option value={{position.id}} >{{position.position}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Address</label>
-        <input type="text" class="form-control" name="address" placeholder="Enter address" [(ngModel)]="employee.address">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="employee.email">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Phone</label>
-        <input type="number" class="form-control" name="phone" placeholder="Enter phone" [(ngModel)]="employee.phone">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Date</label>
-        <input type="date" class="form-control" name="date" placeholder="Enter date" [(ngModel)]="employee.date">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Level</label>
-        <input type="text" class="form-control" name="level" placeholder="Enter level" [(ngModel)]="employee.level">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Image</label>
-        <div class="form-group col-12">
-          <input type="file"id="file" #userPhoto (change)="onFileSelected($event)" name="img"[(ngModel)]="employee.img" autocomplete="off"/>
-         </div>
-        <!-- <input type="text" class="form-control" name="img" placeholder="Enter level" [(ngModel)]="employee.img"> -->
-      </div>
-    
-    <button (click)="addEmployee()" type="submit" class="btn btn-primary">Add</button>
-  </form>
+    </div>
+  </div>
